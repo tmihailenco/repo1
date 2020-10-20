@@ -1,0 +1,55 @@
+1. tanya@tanya:~/tasks/repo1$ git init
+Инициализирован пустой репозиторий Git в /home/tanya/tasks/repo1/.git/
+
+2. git config user.name "Михайленко Татьяна"
+git config  user.email "t.mihailenco@reg.ru"
+git remote add origin https://github.com/tmihailenco/repo1.git
+
+tanya@tanya:~/tasks/repo1$ git config --list --local
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+user.name=Михайленко Татьяна
+user.email=t.mihailenco@reg.ru
+remote.origin.url=https://github.com/tmihailenco/repo1.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+
+3. tanya@tanya:~/tasks/repo1$ git push -u origin 
+Username for 'https://github.com': tmihailenco
+Password for 'https://tmihailenco@github.com': 
+No refs in common and none specified; doing nothing.
+Perhaps you should specify a branch such as 'master'.
+Everything up-to-date
+
+
+
+4. tanya@tanya:~/tasks/repo1$ touch task1.1
+tanya@tanya:~/tasks/repo1$ nano task1.1
+tanya@tanya:~/tasks/repo1$ git status
+На ветке master
+
+Еще нет коммитов
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	task1.1
+
+ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
+
+tanya@tanya:~/tasks/repo1$ nano .gitignore
+
+tanya@tanya:~/tasks/repo1$ git status
+На ветке master
+
+Еще нет коммитов
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	.gitignore
+
+ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
+
+5. tanya@tanya:~/tasks/repo1$ touch task1.1_answer
