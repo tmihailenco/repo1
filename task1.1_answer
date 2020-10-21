@@ -154,3 +154,73 @@ tanya@tanya:~/tasks/repo1$ git status
 нет изменений добавленных для коммита
 (используйте «git add» и/или «git commit -a»)
 
+9. tanya@tanya:~/tasks/repo2$ git pull
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0
+Распаковка объектов: 100% (4/4), готово.
+Из github.com:tmihailenco/repo1
+   baa3268..e8dfc8f  master     -> origin/master
+Автослияние task1.1_answer
+КОНФЛИКТ (содержимое): Конфликт слияния в task1.1_answer
+Удаление fileB
+Не удалось провести автоматическое слияние; исправьте конфликты и сделайте коммит результата.
+tanya@tanya:~/tasks/repo2$ ls 
+fileA  task1.1_answer
+tanya@tanya:~/tasks/repo2$ git status
+На ветке master
+Ваша ветка и «origin/master» разделились
+и теперь имеют 1 и 1 разных коммита в каждой соответственно.
+  (используйте «git pull», чтобы слить внешнюю ветку в вашу)
+
+У вас есть не слитые пути.
+  (разрешите конфликты, затем запустите «git commit»)
+  (используйте «git merge --abort», чтобы остановить операцию слияния)
+
+Изменения, которые будут включены в коммит:
+
+  изменено:      fileA
+  удалено:       fileB
+
+Не слитые пути:
+  (используйте «git add <файл>…», чтобы пометить разрешение конфликта)
+
+  оба изменены:   task1.1_answer
+
+tanya@tanya:~/tasks/repo2$ git push origin master
+Подсчет объектов: 6, готово.
+Delta compression using up to 8 threads.
+Сжатие объектов: 100% (6/6), готово.
+Запись объектов: 100% (6/6), 2.27 KiB | 581.00 KiB/s, готово.
+Total 6 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+To github.com:tmihailenco/repo1.git
+   e8dfc8f..96952dd  master -> master
+tanya@tanya:~/tasks/repo2$ cd ../repo1
+
+tanya@tanya:~/tasks/repo1$ git pull origin master
+Из https://github.com/tmihailenco/repo1
+ * branch            master     -> FETCH_HEAD
+Обновление e8dfc8f..96952dd
+Fast-forward
+ task1.1_answer | 79 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 79 insertions(+)
+
+10. tanya@tanya:~/tasks/repo1$ git log --diff-filter=D --summary
+commit e8dfc8fdb5f6aa56e852cb0ae4228b44e6c5713b
+Author: Михайленко Татьяна <t.mihailenco@reg.ru>
+Date:   Wed Oct 21 11:34:28 2020 +0300
+
+    remove fileB and add string in fileA
+
+ delete mode 100644 fileB
+tanya@tanya:~/tasks/repo1$ git checkout e8dfc8fdb5f6aa56e852cb0ae4228b44e6c5713b~1 fileB
+tanya@tanya:~/tasks/repo1$ git status
+На ветке master
+Изменения, которые будут включены в коммит:
+  (используйте «git reset HEAD <файл>…», чтобы убрать из индекса)
+
+  новый файл:    fileB
+
+tanya@tanya:~/tasks/repo1$ git add .
