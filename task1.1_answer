@@ -53,6 +53,10 @@ tanya@tanya:~/tasks/repo1$ git status
 ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
 
 5. tanya@tanya:~/tasks/repo1$ touch task1.1_answer
+git add .
+git commit -m "add task1.1 and gitignore"
+git push origin master
+
 6. tanya@tanya:~/tasks/repo1$ cd ..
 tanya@tanya:~/tasks$ mkdir repo2
 tanya@tanya:~/tasks$ cd repo2
@@ -126,3 +130,27 @@ Fast-forward
  2 files changed, 2 insertions(+)
  create mode 100644 fileA
  create mode 100644 fileB
+
+
+8.tanya@tanya:~/tasks/repo1$ git diff fileA
+diff --git a/fileA b/fileA
+index bfb9865..f8b07a7 100644
+--- a/fileA
++++ b/fileA
+@@ -1 +1,2 @@
+ some text 1
++some string2
+
+tanya@tanya:~/tasks/repo1$ git status
+На ветке master
+Изменения, которые не в индексе для коммита:
+  (используйте «git add/rm <файл>…», чтобы добавить или удалить файл из индекса)
+  (используйте «git checkout -- <файл>…», чтобы отменить изменения
+   в рабочем каталоге)
+
+	изменено:      fileA
+	удалено:       fileB
+
+нет изменений добавленных для коммита
+(используйте «git add» и/или «git commit -a»)
+
