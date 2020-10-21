@@ -53,3 +53,76 @@ tanya@tanya:~/tasks/repo1$ git status
 ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
 
 5. tanya@tanya:~/tasks/repo1$ touch task1.1_answer
+6. tanya@tanya:~/tasks/repo1$ cd ..
+tanya@tanya:~/tasks$ mkdir repo2
+tanya@tanya:~/tasks$ cd repo2
+tanya@tanya:~/tasks/repo2$ git clone git@github.com:tmihailenco/repo1.git .
+Клонирование в «.»…
+Warning: Permanently added the RSA host key for IP address '140.82.121.3' to the list of known hosts.
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 0), reused 4 (delta 0), pack-reused 0
+Получение объектов: 100% (4/4), готово.
+7.tanya@tanya:~/tasks/repo2$ echo "some text 1" > fileA
+tanya@tanya:~/tasks/repo2$ echo "some text 1" > fileA
+tanya@tanya:~/tasks/repo2$ git status
+На ветке master
+Ваша ветка обновлена в соответствии с «origin/master».
+
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>…», чтобы добавить файл в индекс)
+  (используйте «git checkout -- <файл>…», чтобы отменить изменения
+   в рабочем каталоге)
+
+	изменено:      task1.1_answer
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	fileA
+	fileB
+
+нет изменений добавленных для коммита
+(используйте «git add» и/или «git commit -a»)
+
+tanya@tanya:~/tasks/repo2$ git add fileA fileB
+tanya@tanya:~/tasks/repo2$ git status
+На ветке master
+Ваша ветка обновлена в соответствии с «origin/master».
+
+Изменения, которые будут включены в коммит:
+  (используйте «git reset HEAD <файл>…», чтобы убрать из индекса)
+
+	новый файл:    fileA
+	новый файл:    fileB
+
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>…», чтобы добавить файл в индекс)
+  (используйте «git checkout -- <файл>…», чтобы отменить изменения
+   в рабочем каталоге)
+
+	изменено:      task1.1_answer
+tanya@tanya:~/tasks/repo2$ git commit -m "add fileA and fileB"
+[master baa3268] add fileA and fileB
+ 2 files changed, 2 insertions(+)
+ create mode 100644 fileA
+ create mode 100644 fileB
+tanya@tanya:~/tasks/repo2$ git push origin master
+Подсчет объектов: 4, готово.
+Delta compression using up to 8 threads.
+Сжатие объектов: 100% (2/2), готово.
+Запись объектов: 100% (4/4), 371 bytes | 371.00 KiB/s, готово.
+Total 4 (delta 0), reused 0 (delta 0)
+To github.com:tmihailenco/repo1.git
+   aac3286..baa3268  master -> master
+tanya@tanya:~/tasks/repo1$ git pull origin master
+Из https://github.com/tmihailenco/repo1
+ * branch            master     -> FETCH_HEAD
+Обновление aac3286..baa3268
+Fast-forward
+ fileA | 1 +
+ fileB | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 fileA
+ create mode 100644 fileB
