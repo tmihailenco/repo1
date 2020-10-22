@@ -300,3 +300,30 @@ Date:   Tue Oct 20 12:13:54 2020 +0300
     add task1.1 and gitignore
 12. tanya@tanya:~/tasks/repo1$ git checkout -b feature1
 Переключено на новую ветку «feature1»
+
+13. tanya@tanya:~/tasks/repo2$ git checkout -b feature2
+Переключено на новую ветку «feature2»
+14. tanya@tanya:~/tasks/repo2$ git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+Распаковка объектов: 100% (3/3), готово.
+Из github.com:tmihailenco/repo1
+ * [новая ветка]     feature1   -> origin/feature1
+У текущей ветки нет информации об отслеживании.
+Пожалуйста, укажите с какой веткой вы хотите слить изменения.
+Для дополнительной информации, смотрите git-pull(1).
+
+    git pull <внешний-репозиторий> <ветка>
+
+Если вы хотите указать информацию о отслеживаемой ветке, выполните:
+
+    git branch --set-upstream-to=origin/<ветка> feature2
+
+tanya@tanya:~/tasks/repo2$ git status
+На ветке feature2
+нечего коммитить, нет изменений в рабочем каталоге
+tanya@tanya:~/tasks/repo2$ git checkout master
+Переключено на ветку «master»
+Ваша ветка обновлена в соответствии с «origin/master».
