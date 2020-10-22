@@ -336,3 +336,30 @@ tanya@tanya:~/tasks/repo2$ git checkout master
   remotes/origin/HEAD -> origin/master
   remotes/origin/feature1
   remotes/origin/master
+16. tanya@tanya:~/tasks/repo1$ git pull
+remote: Enumerating objects: 13, done.
+remote: Counting objects: 100% (13/13), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 9 (delta 6), reused 7 (delta 4), pack-reused 0
+Распаковка объектов: 100% (9/9), готово.
+Из https://github.com/tmihailenco/repo1
+ * [новая ветка]     feature2   -> origin/feature2
+   ca52c22..f648b37  master     -> origin/master
+У текущей ветки нет информации об отслеживании.
+Пожалуйста, укажите с какой веткой вы хотите слить изменения.
+Для дополнительной информации, смотрите git-pull(1).
+
+    git pull <внешний-репозиторий> <ветка>
+
+Если вы хотите указать информацию о отслеживаемой ветке, выполните:
+
+    git branch --set-upstream-to=origin/<ветка> master
+    
+tanya@tanya:~/tasks/repo1$ git merge feature2
+Обновление 0a00d62..f09cd1b
+Fast-forward
+ task1.1_answer | 112 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 112 insertions(+)
+
+
+17. 
