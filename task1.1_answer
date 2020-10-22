@@ -224,3 +224,79 @@ tanya@tanya:~/tasks/repo1$ git status
   новый файл:    fileB
 
 tanya@tanya:~/tasks/repo1$ git add .
+11. tanya@tanya:~/tasks/repo1$ git log
+commit ca52c223752d5f8620a268b79de4cec96bdcb74e (HEAD -> master, origin/master)
+Author: Михайленко Татьяна <t.mihailenco@reg.ru>
+Date:   Wed Oct 21 12:13:55 2020 +0300
+
+    reset fileB
+
+commit 96952dd319bb7d9666012634a87ec8cfc64e3e13
+Merge: e430241 e8dfc8f
+Author: Михайленко Татьяна <t.mihailenco@reg.ru>
+Date:   Wed Oct 21 12:00:17 2020 +0300
+
+    git pull and resolve conflicts
+
+commit e43024154441a451f2a8338a06e57c0ba0d04df2
+Author: Михайленко Татьяна <t.mihailenco@reg.ru>
+Date:   Wed Oct 21 11:47:34 2020 +0300
+
+    add text in task1.1_answer
+
+commit e8dfc8fdb5f6aa56e852cb0ae4228b44e6c5713b
+Author: Михайленко Татьяна <t.mihailenco@reg.ru>
+Date:   Wed Oct 21 11:34:28 2020 +0300
+
+    remove fileB and add string in fileA
+
+commit baa326808c7a75457cb5b15882322712681ff125
+Author: Tanya <t.mihailenco@reg.ru>
+Date:   Tue Oct 20 12:34:17 2020 +0300
+
+    add fileA and fileB
+
+commit aac32863fcb38377f56abaceb4151b5af4b493ff
+Author: Михайленко Татьяна <t.mihailenco@reg.ru>
+Date:   Tue Oct 20 12:13:54 2020 +0300
+
+    add task1.1 and gitignore
+tanya@tanya:~/tasks/repo2$ git log
+commit ca52c223752d5f8620a268b79de4cec96bdcb74e (HEAD -> master, origin/master, origin/HEAD)
+Author: Михайленко Татьяна <t.mihailenco@reg.ru>
+Date:   Wed Oct 21 12:13:55 2020 +0300
+
+    reset fileB
+
+commit 96952dd319bb7d9666012634a87ec8cfc64e3e13
+Merge: e430241 e8dfc8f
+Author: Михайленко Татьяна <t.mihailenco@reg.ru>
+Date:   Wed Oct 21 12:00:17 2020 +0300
+
+    git pull and resolve conflicts
+
+commit e43024154441a451f2a8338a06e57c0ba0d04df2
+Author: Михайленко Татьяна <t.mihailenco@reg.ru>
+Date:   Wed Oct 21 11:47:34 2020 +0300
+
+    add text in task1.1_answer
+
+commit e8dfc8fdb5f6aa56e852cb0ae4228b44e6c5713b
+Author: Михайленко Татьяна <t.mihailenco@reg.ru>
+Date:   Wed Oct 21 11:34:28 2020 +0300
+
+    remove fileB and add string in fileA
+
+commit baa326808c7a75457cb5b15882322712681ff125
+Author: Tanya <t.mihailenco@reg.ru>
+Date:   Tue Oct 20 12:34:17 2020 +0300
+
+    add fileA and fileB
+
+commit aac32863fcb38377f56abaceb4151b5af4b493ff
+Author: Михайленко Татьяна <t.mihailenco@reg.ru>
+Date:   Tue Oct 20 12:13:54 2020 +0300
+
+    add task1.1 and gitignore
+12. tanya@tanya:~/tasks/repo1$ git checkout -b feature1
+Переключено на новую ветку «feature1»
