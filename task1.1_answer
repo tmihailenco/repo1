@@ -224,3 +224,11 @@ tanya@tanya:~/tasks/repo1$ git status
   новый файл:    fileB
 
 tanya@tanya:~/tasks/repo1$ git add .
+
+
+15. tanya@tanya:~/tasks/repo2$ git branch -a
+* feature2
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/feature1
+  remotes/origin/master
